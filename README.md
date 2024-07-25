@@ -270,6 +270,21 @@ end
 
 In order to use this profile, create helper method named `smart_listing_config_profile` returning profile name and put into your JS `SmartListing.config.merge()` function call. `merge()` function expects parameter with config attributes hash or reads body data-attribute named `smart-listing-config`. Hash of config attributes can be obtained by using helper method `SmartListing.config(:awesome_profile).to_json`.
 
+## Running tests
+The project uses the good old `capybara-webkit` as the driver. Running the test should be done using `xvfb` as follows:
+1. On Linux, install `xvfb`
+```
+apt update && apt install xvfb -y
+```
+2. Pre-compile the assets
+```
+./spec/dummy/bin/rails app:assets:precompile
+```
+3. Run the RSpec using `xvfb-run`
+```
+RAILS_ENV=test xvfb-run -a bundle exec rspec
+```
+
 ## Not enough?
 
 For more information and some use cases, see the [Showcase](http://showcase.sology.eu/smart_listing)

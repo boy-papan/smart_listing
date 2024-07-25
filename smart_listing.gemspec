@@ -26,7 +26,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency "guard-rspec"
   s.add_development_dependency "byebug"
 
-  s.add_development_dependency "capybara", "< 2.14"
-  s.add_development_dependency "capybara-webkit", "~> 1.14"
+  s.add_development_dependency "capybara"#, "< 2.14"
+  s.add_development_dependency "capybara-webkit" #, "~> 1.14"
   s.add_development_dependency "database_cleaner"
+  s.add_development_dependency "puma"
+  s.add_development_dependency "sprockets-rails"
+  s.add_development_dependency "autoprefixer-rails"
 end

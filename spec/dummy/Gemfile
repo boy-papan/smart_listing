@@ -1,3 +1,11 @@
 source "https://rubygems.org"
 
 gemspec path: "../.."
+
+gem "sassc-rails"
+gem "sassc"
+gem "jquery-rails"
+gem "bootstrap-sass"
+gem "msgpack", ">= 1.7.0"
+gem "byebug"
+gem "autoprefixer-rails"

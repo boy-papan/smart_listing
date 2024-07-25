@@ -10,7 +10,6 @@ module SmartListing
         options = args.extract_options!
         name = (args[0] || options[:name] || controller_name).to_sym
         collection = args[1] || options[:collection] || smart_listing_collection
-
         view_context = self.respond_to?(:controller) ? controller.view_context : self.view_context
         options = {:config_profile => view_context.smart_listing_config_profile}.merge(options)
 
@@ -46,7 +45,10 @@ module SmartListing
 
       def paginate options = {}
         if @smart_listing.collection.respond_to? :current_page
-          @template.paginate @smart_listing.collection, {:remote => @smart_listing.remote?, :param_name => @smart_listing.param_name(:page)}.merge(@smart_listing.kaminari_options)
+          @template.paginate @smart_listing.collection, **{
+              :remote => @smart_listing.remote?,
+              :param_name => @smart_listing.param_name(:page)
+            }.merge(@smart_listing.kaminari_options)
         end
       end
 
