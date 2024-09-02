@@ -324,7 +324,6 @@ DEPENDENCIES
   capybara-webkit!
   database_cleaner
   guard-rspec
-  kaminari-actionview
   puma
   rspec-rails
   smart_listing!
