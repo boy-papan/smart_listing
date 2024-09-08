@@ -1,4 +1,5 @@
-require 'smart_listing/helper'
+require_relative 'helper.rb'
+
 module SmartListing
   module ApplicationHelper
   end
